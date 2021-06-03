@@ -37,7 +37,7 @@ public class BioFragment extends Fragment {
                 final EditText etInput = viewDialog.findViewById(R.id.editText);
 
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
-
+                myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Bio");
                 myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
