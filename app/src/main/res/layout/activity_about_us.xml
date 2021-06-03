@@ -9,8 +9,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Created by: Amanda, Huai Yu, Li Tong" />
 
     <ImageView
@@ -33,12 +35,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Republic Polytechnic"
         android:layout_gravity="center"/>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="300dp"/>
 
 
 </LinearLayout>
