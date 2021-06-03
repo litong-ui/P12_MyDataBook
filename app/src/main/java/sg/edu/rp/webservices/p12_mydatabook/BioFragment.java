@@ -3,8 +3,10 @@ package sg.edu.rp.webservices.p12_mydatabook;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,7 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class BioFragment extends Fragment {
 
@@ -28,6 +33,15 @@ public class BioFragment extends Fragment {
         tvBio = view.findViewById(R.id.textView3);
         btnEdit = view.findViewById(R.id.btnEdit);
 
+        FloatingActionButton fab = view.findViewById(R.id.fab1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +53,7 @@ public class BioFragment extends Fragment {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
                 myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Bio");
-                myBuilder.setCancelable(true);
+//                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -47,11 +61,14 @@ public class BioFragment extends Fragment {
                         tvBio.setText(message);
                     }
                 });
+                myBuilder.setNegativeButton("CANCEL", null);
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
             }
         });
 
+
         return view;
     }
+
 }
