@@ -12,11 +12,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
     private String[] drawerItems;
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.drawer_layout);
         drawerList = findViewById(R.id.left_drawer);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
         drawerItems = new String[] { "Bio", "Vaccination", "Anniversary", "About Us" };
         ab = getSupportActionBar();
@@ -40,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
         aa = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_activated_1, drawerItems);
         drawerList.setAdapter(aa);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //action
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
