@@ -35,15 +35,6 @@ public class BioFragment extends Fragment {
         tvBio = view.findViewById(R.id.textView3);
         btnEdit = view.findViewById(R.id.btnEdit);
 
-        FloatingActionButton fab = view.findViewById(R.id.fab1);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-            }
-        });
-
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
