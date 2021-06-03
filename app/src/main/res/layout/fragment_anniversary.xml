@@ -20,5 +20,4 @@
         android:layout_gravity="bottom"
         android:text="Edit" />
 
-
 </FrameLayout>
