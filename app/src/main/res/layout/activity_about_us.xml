@@ -23,5 +23,11 @@
         android:text="Republic Polytechnic"
         android:layout_gravity="center"/>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
 
 </LinearLayout>
