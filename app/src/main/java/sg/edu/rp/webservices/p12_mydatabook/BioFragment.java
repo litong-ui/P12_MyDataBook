@@ -1,6 +1,7 @@
 package sg.edu.rp.webservices.p12_mydatabook;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -30,7 +31,8 @@ public class BioFragment extends Fragment {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                View viewDialog = inflater.inflate(R.layout.input, null);
+                LayoutInflater inflater1 = (LayoutInflater) getActivity().getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View viewDialog = inflater1.inflate(R.layout.input, null);
 
                 final EditText etInput = viewDialog.findViewById(R.id.editText);
 
