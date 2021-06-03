@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 public class AboutUsActivity extends AppCompatActivity {
