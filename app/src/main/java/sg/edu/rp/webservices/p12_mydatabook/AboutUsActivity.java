@@ -17,5 +17,3 @@ public class AboutUsActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 }
-
-android:textAppearance="@style/TextAppearance
