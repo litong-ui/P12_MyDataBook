@@ -23,8 +23,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
     private String[] drawerItems;
-    private DrawerLayout drawerLayout;
-    private ListView drawerList;
+    public DrawerLayout drawerLayout;
+    public ListView drawerList;
     ArrayAdapter<String> aa;
     String currentTitle;
     ActionBar ab;
@@ -134,4 +134,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
