@@ -45,8 +45,11 @@ public class BioFragment extends Fragment {
                         tvBio.setText(message);
                     }
                 });
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
         });
+
         return view;
     }
 }
