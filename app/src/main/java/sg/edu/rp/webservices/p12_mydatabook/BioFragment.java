@@ -47,6 +47,7 @@ public class BioFragment extends Fragment {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
                 myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Bio");
+                etInput.setText(tvBio.getText().toString());
 //                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
