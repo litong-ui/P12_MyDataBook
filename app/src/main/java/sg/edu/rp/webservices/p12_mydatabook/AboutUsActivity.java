@@ -17,6 +17,3 @@ public class AboutUsActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 }
-
-error.png
-ajax-loader.gif
