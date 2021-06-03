@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         drawerList = findViewById(R.id.left_drawer);
 
-        drawerItems = new String[] { "Bio", "Vaccination", "Anniversary" };
+        drawerItems = new String[] { "Bio", "Vaccination", "Anniversary", "About Us" };
         ab = getSupportActionBar();
 
         aa = new ArrayAdapter<String>(this,
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                Intent i = new Intent(MainActivity.this,
+                        AboutUsActivity.class);
 
                 Fragment fragment = null;
                 if (position == 0)
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new VaccinationFragment();
                 else if (position == 2)
                     fragment = new AnniversaryFragment();
+                else if (position ==3)
+                    startActivity(i);
 
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction trans = fm.beginTransaction();
