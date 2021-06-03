@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this,
                         AboutUsActivity.class);
 
-                Fragment fragment = null;
+                Fragment fragment = new BioFragment();
                 if (position == 0)
                     fragment = new BioFragment();
                 else if (position == 1)
