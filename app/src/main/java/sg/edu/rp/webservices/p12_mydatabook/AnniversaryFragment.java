@@ -1,5 +1,8 @@
 package sg.edu.rp.webservices.p12_mydatabook;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class AnniversaryFragment extends Fragment {
+
+    TextView tvAnniversary;
+    Button btnEdit;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +68,34 @@ public class AnniversaryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_anniversary, container, false);
+        View view = inflater.inflate(R.layout.fragment_anniversary, container, false);
+        tvAnniversary = view.findViewById(R.id.textView2);
+        btnEdit = view.findViewById(R.id.btnEdit);
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater inflater1 = (LayoutInflater) getActivity().getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View viewDialog = inflater1.inflate(R.layout.input, null);
+
+                final EditText etInput = viewDialog.findViewById(R.id.editText);
+
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
+                myBuilder.setView(viewDialog);
+                myBuilder.setTitle("Edit Anniversary");
+//                myBuilder.setCancelable(true);
+                myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String message = etInput.getText().toString();
+                        tvAnniversary.setText(message);
+                    }
+                });
+                myBuilder.setNegativeButton("CANCEL", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
+            }
+        });
+        return view;
     }
 }

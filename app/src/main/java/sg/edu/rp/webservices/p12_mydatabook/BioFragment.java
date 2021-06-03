@@ -37,9 +37,9 @@ public class BioFragment extends Fragment {
                 final EditText etInput = viewDialog.findViewById(R.id.editText);
 
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
-
+                myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Bio");
-                myBuilder.setCancelable(true);
+//                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -47,6 +47,7 @@ public class BioFragment extends Fragment {
                         tvBio.setText(message);
                     }
                 });
+                myBuilder.setNegativeButton("CANCEL", null);
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
             }
