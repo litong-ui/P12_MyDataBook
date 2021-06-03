@@ -3,6 +3,7 @@ package sg.edu.rp.webservices.p12_mydatabook;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -72,6 +73,11 @@ public class AnniversaryFragment extends Fragment {
         tvAnniversary = view.findViewById(R.id.textView2);
         btnEdit = view.findViewById(R.id.btnEdit);
 
+        SharedPreferences preferences = getActivity().getSharedPreferences("Anniversary", Context.MODE_PRIVATE);
+        String storedPreference = preferences.getString("Message", "");
+
+        tvAnniversary.setText(storedPreference);
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +95,11 @@ public class AnniversaryFragment extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String message = etInput.getText().toString();
                         tvAnniversary.setText(message);
+
+                        SharedPreferences.Editor editor = preferences.edit();
+
+                        editor.putString("Message", message);
+                        editor.commit();
                     }
                 });
                 myBuilder.setNegativeButton("CANCEL", null);

@@ -3,6 +3,7 @@ package sg.edu.rp.webservices.p12_mydatabook;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -71,6 +72,12 @@ public class VaccinationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_vaccination, container, false);
         tvVaccination = view.findViewById(R.id.textView);
         btnEdit = view.findViewById(R.id.btnEdit);
+
+        SharedPreferences preferences = getActivity().getSharedPreferences("Vaccination", Context.MODE_PRIVATE);
+        String storedPreference = preferences.getString("Message", "");
+
+        tvVaccination.setText(storedPreference);
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +95,11 @@ public class VaccinationFragment extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String message = etInput.getText().toString();
                         tvVaccination.setText(message);
+
+                        SharedPreferences.Editor editor = preferences.edit();
+
+                        editor.putString("Message", message);
+                        editor.commit();
                     }
                 });
                 myBuilder.setNegativeButton("CANCEL", null);
