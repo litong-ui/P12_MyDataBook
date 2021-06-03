@@ -89,6 +89,7 @@ public class VaccinationFragment extends Fragment {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
                 myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Vaccination");
+                etInput.setText(tvVaccination.getText().toString());
 //                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override

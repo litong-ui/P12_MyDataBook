@@ -89,6 +89,7 @@ public class AnniversaryFragment extends Fragment {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(getActivity());
                 myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Edit Anniversary");
+                etInput.setText(tvAnniversary.getText().toString());
 //                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
