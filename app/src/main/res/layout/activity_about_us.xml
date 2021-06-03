@@ -20,15 +20,17 @@
 
     <TextView
         android:id="@+id/textViewAbout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="C347 - Android Programming II"
         android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/textViewAbout2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Republic Polytechnic"
         android:layout_gravity="center"/>
 
