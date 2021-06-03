@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 public class AboutUsActivity extends AppCompatActivity {
+
     ActionBar ab;
     ImageView iv;
 
@@ -23,7 +24,11 @@ public class AboutUsActivity extends AppCompatActivity {
         iv = findViewById(R.id.imageView);
 
         String imageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/80/Republic_Polytechnic_Logo.jpg";
-        Picasso.with(this).load(imageUrl).into(iv);
 
+        Picasso.with(this)
+                .load(imageUrl)
+                .placeholder(R.drawable.ajax_loader)
+                .error(R.drawable.error)
+                .into(iv);
     }
 }
